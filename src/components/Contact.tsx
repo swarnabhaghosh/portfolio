@@ -78,7 +78,7 @@ const Contact = () => {
             </h3>
 
             <p className="text-gray-400 leading-relaxed mb-10">
-              Whether it's an AI application, machine learning
+              Whether it&apos;s an AI application, machine learning
               project, research collaboration, or an intelligent
               system, I&apos;m always open to discussing new ideas
               and opportunities.
