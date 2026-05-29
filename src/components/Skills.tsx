@@ -11,7 +11,7 @@ const Skills = () => {
     },
     {
       title: 'Backend & Database',
-      skills: ['SQL', 'Flask', 'FastAPI'],
+      skills: ['Flask', 'FastAPI', 'SQL'],
       color: 'from-green-500 to-emerald-500',
     },
     {
