@@ -1,3 +1,4 @@
+```tsx
 'use client';
 
 import { motion } from 'framer-motion';
@@ -5,41 +6,34 @@ import {
   Github,
   Linkedin,
   Mail,
+  Phone,
+  MapPin,
   Instagram,
-  Download,
 } from 'lucide-react';
 
-import {
-  SiLeetcode,
-  SiKaggle,
-} from 'react-icons/si';
+import { SiLeetcode, SiKaggle } from 'react-icons/si';
 
 const Contact = () => {
   const socials = [
     {
       icon: Github,
       href: 'https://github.com/swarnabhaghosh',
-      label: 'GitHub',
     },
     {
       icon: Linkedin,
       href: 'https://www.linkedin.com/in/swarnabhaghosh/',
-      label: 'LinkedIn',
     },
     {
       icon: SiKaggle,
       href: 'https://www.kaggle.com/swarnabhaghosh9',
-      label: 'Kaggle',
     },
     {
       icon: SiLeetcode,
       href: 'https://leetcode.com/u/swarnabhaghosh/',
-      label: 'LeetCode',
     },
     {
       icon: Instagram,
       href: 'https://instagram.com/swarnabha09',
-      label: 'Instagram',
     },
   ];
 
@@ -48,87 +42,150 @@ const Contact = () => {
       id="contact"
       className="py-24 relative overflow-hidden"
     >
-      {/* Background Glow */}
       <div className="absolute top-20 left-10 w-72 h-72 bg-cyan-500/10 blur-3xl rounded-full" />
-
       <div className="absolute bottom-10 right-10 w-72 h-72 bg-purple-500/10 blur-3xl rounded-full" />
 
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* Heading */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center"
+          className="mb-16"
         >
-          {/* Heading */}
-          <h2 className="text-4xl md:text-5xl font-bold gradient-text mb-4">
-            Get In Touch
+          <h2 className="text-5xl md:text-6xl font-bold mb-4">
+            <span className="text-white">Let's </span>
+            <span className="gradient-text">Connect</span>
           </h2>
 
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto mb-12 leading-relaxed">
-            Open to AI/ML internships, research collaborations, and opportunities
-            in Machine Learning, Deep Learning, Computer Vision, and Intelligent
-            Systems.
+          <p className="text-gray-400 text-lg max-w-2xl">
+            Open to AI/ML internships, research collaborations, and
+            opportunities in Machine Learning, Deep Learning,
+            Computer Vision, and Intelligent Systems.
           </p>
+        </motion.div>
 
-          {/* Email */}
-          <a
-            href="mailto:swarnabha983@gmail.com"
-            className="inline-flex items-center gap-3 text-gray-300 hover:text-cyan-300 transition-colors duration-300 text-lg mb-12"
+        {/* Main Grid */}
+        <div className="grid lg:grid-cols-2 gap-8">
+          {/* Left Side */}
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="glass rounded-3xl p-8"
           >
-            <Mail size={22} />
-            <span>swarnabha983@gmail.com</span>
-          </a>
+            <h3 className="text-3xl font-bold text-white mb-6">
+              Let's Build Something
+            </h3>
 
-          {/* Social Icons */}
-          <div className="flex flex-wrap justify-center gap-5 mb-12">
-            {socials.map((social, index) => (
-              <motion.a
-                key={index}
-                href={social.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                title={social.label}
-                whileHover={{
-                  y: -4,
-                  scale: 1.08,
-                }}
-                transition={{ duration: 0.2 }}
-                className="p-4 rounded-xl bg-white/5 border border-white/10 text-gray-300 hover:text-cyan-300 hover:border-cyan-400/40 hover:bg-white/10 hover:shadow-[0_0_20px_rgba(34,211,238,0.12)] transition-all duration-300"
+            <p className="text-gray-400 leading-relaxed mb-10">
+              Whether it's an AI application, machine learning
+              project, research collaboration, or an intelligent
+              system, I'm always open to discussing new ideas
+              and opportunities.
+            </p>
+
+            <div className="space-y-6">
+              <div className="flex items-center gap-4">
+                <div className="p-3 rounded-full border border-white/10">
+                  <Mail size={18} />
+                </div>
+
+                <span className="text-gray-300">
+                  swarnabha983@gmail.com
+                </span>
+              </div>
+
+              <div className="flex items-center gap-4">
+                <div className="p-3 rounded-full border border-white/10">
+                  <Phone size={18} />
+                </div>
+
+                <span className="text-gray-300">
+                  +91 9836951351
+                </span>
+              </div>
+
+              <div className="flex items-center gap-4">
+                <div className="p-3 rounded-full border border-white/10">
+                  <MapPin size={18} />
+                </div>
+
+                <span className="text-gray-300">
+                  Howrah, West Bengal, India
+                </span>
+              </div>
+            </div>
+
+            {/* Socials */}
+            <div className="flex gap-4 mt-10 flex-wrap">
+              {socials.map((social, index) => (
+                <a
+                  key={index}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-4 rounded-xl bg-white/5 border border-white/10 text-gray-300 hover:text-cyan-300 hover:border-cyan-400/40 transition-all duration-300"
+                >
+                  <social.icon size={22} />
+                </a>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Right Side Form */}
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="glass rounded-3xl p-8"
+          >
+            <form className="space-y-5">
+              <div className="grid md:grid-cols-2 gap-4">
+                <input
+                  type="text"
+                  placeholder="Your name"
+                  className="bg-white/5 border border-white/10 rounded-xl px-4 py-4 outline-none focus:border-cyan-400"
+                />
+
+                <input
+                  type="email"
+                  placeholder="your@email.com"
+                  className="bg-white/5 border border-white/10 rounded-xl px-4 py-4 outline-none focus:border-cyan-400"
+                />
+              </div>
+
+              <input
+                type="text"
+                placeholder="What's this about?"
+                className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 outline-none focus:border-cyan-400"
+              />
+
+              <textarea
+                rows={7}
+                placeholder="Tell me about the opportunity or project..."
+                className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 outline-none focus:border-cyan-400 resize-none"
+              />
+
+              <button
+                type="submit"
+                className="w-full py-4 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-500 font-semibold text-white hover:scale-[1.01] transition-all duration-300"
               >
-                <social.icon size={26} />
-              </motion.a>
-            ))}
-          </div>
+                Send Message
+              </button>
+            </form>
+          </motion.div>
+        </div>
 
-          {/* Resume Button */}
-          <a
-            href="/resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-medium hover:scale-105 hover:shadow-[0_0_25px_rgba(34,211,238,0.25)] transition-all duration-300"
-          >
-            <Download size={18} />
-            View Resume
-          </a>
-        </motion.div>
-
-        {/* Footer */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="border-t border-white/10 mt-20 pt-8 text-center"
-        >
+        <div className="border-t border-white/10 mt-20 pt-8 text-center">
           <p className="text-gray-500 text-sm">
-            © 2026 Swarnabha Ghosh. Built with Next.js, Tailwind CSS & Framer Motion.
+            © 2026 Swarnabha Ghosh. All rights reserved.
           </p>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
 };
 
 export default Contact;
+```
