@@ -12,7 +12,33 @@ import {
 
 import { SiLeetcode, SiKaggle } from 'react-icons/si';
 
+import { useRef } from 'react';
+import emailjs from '@emailjs/browser';
+
 const Contact = () => {
+  const formRef = useRef<HTMLFormElement>(null);
+
+  const sendEmail = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (!formRef.current) return;
+
+    try {
+      await emailjs.sendForm(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+        formRef.current,
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+      );
+
+      alert('✓ Message sent successfully!');
+      formRef.current.reset();
+    } catch (error) {
+      console.error(error);
+      alert('Failed to send message. Please try again.');
+    }
+  };
+
   const socials = [
     {
       icon: Github,
@@ -83,7 +109,6 @@ const Contact = () => {
                 <div className="p-3 rounded-full border border-white/10">
                   <Mail size={18} />
                 </div>
-
                 <span className="text-gray-300">
                   swarnabha983@gmail.com
                 </span>
@@ -93,7 +118,6 @@ const Contact = () => {
                 <div className="p-3 rounded-full border border-white/10">
                   <Phone size={18} />
                 </div>
-
                 <span className="text-gray-300">
                   +91 9836951351
                 </span>
@@ -103,7 +127,6 @@ const Contact = () => {
                 <div className="p-3 rounded-full border border-white/10">
                   <MapPin size={18} />
                 </div>
-
                 <span className="text-gray-300">
                   Howrah, West Bengal, India
                 </span>
@@ -133,29 +156,41 @@ const Contact = () => {
             viewport={{ once: true }}
             className="glass rounded-3xl p-8"
           >
-            <form className="space-y-5">
+            <form
+              ref={formRef}
+              onSubmit={sendEmail}
+              className="space-y-5"
+            >
               <div className="grid md:grid-cols-2 gap-4">
                 <input
+                  name="user_name"
                   type="text"
                   placeholder="Your name"
+                  required
                   className="bg-white/5 border border-white/10 rounded-xl px-4 py-4 outline-none focus:border-cyan-400"
                 />
 
                 <input
+                  name="user_email"
                   type="email"
                   placeholder="your@email.com"
+                  required
                   className="bg-white/5 border border-white/10 rounded-xl px-4 py-4 outline-none focus:border-cyan-400"
                 />
               </div>
 
               <input
+                name="subject"
                 type="text"
-                placeholder="What&apos;s this about?"
+                placeholder="What is this about?"
+                required
                 className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 outline-none focus:border-cyan-400"
               />
 
               <textarea
+                name="message"
                 rows={7}
+                required
                 placeholder="Tell me about the opportunity or project..."
                 className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 outline-none focus:border-cyan-400 resize-none"
               />
