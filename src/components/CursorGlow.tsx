@@ -34,9 +34,9 @@ export default function CursorGlow() {
         transform: 'translate(-50%, -50%)',
       }}
     >
-      <div className="w-3 h-3 rounded-full bg-cyan-400/15" />
+      <div className="w-4 h-4 rounded-full bg-cyan-400/40 blur-[1px]" />
 
-  <div className="absolute inset-0 w-8 h-8 -translate-x-2.5 -translate-y-2.5 rounded-full border border-cyan-400/10" />
+      <div className="absolute inset-0 w-12 h-12 -translate-x-4 -translate-y-4 rounded-full border border-cyan-400/25" />
     </div>
   );
 }
