@@ -53,15 +53,9 @@ const Contact = () => {
           className="mb-16"
         >
           <h2 className="text-5xl md:text-6xl font-bold mb-4">
-            <span className="text-white">Let&apos;s </span>
-            <span className="gradient-text">Connect</span>
+            <span className="text-white">Get In </span>
+            <span className="gradient-text">Touch</span>
           </h2>
-
-          <p className="text-gray-400 text-lg max-w-2xl">
-            Open to AI/ML internships, research collaborations, and
-            opportunities in Machine Learning, Deep Learning,
-            Computer Vision, and Intelligent Systems.
-          </p>
         </motion.div>
 
         {/* Main Grid */}
