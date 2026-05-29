@@ -34,9 +34,9 @@ const Contact = () => {
       alert('✓ Message sent successfully!');
       formRef.current.reset();
     } catch (error) {
-      console.error('EmailJS Error:', error);
-      alert(JSON.stringify(error));
-}
+      console.error(error);
+      alert('Failed to send message. Please try again.');
+    }
   };
 
   const socials = [
