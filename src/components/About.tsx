@@ -114,7 +114,7 @@ const About = () => {
             transition={{ duration: 0.7 }}
           >
             <p className="text-base md:text-lg text-gray-300 leading-relaxed mb-6">
-              I'm a Computer Science Engineering student at{' '}
+              I am a Computer Science Engineering student at{' '}
               <span className="text-cyan-400 font-medium">
                 MCKV Institute of Engineering
               </span>{' '}
