@@ -192,7 +192,7 @@ const Hero = () => {
 
         {/* Scroll Indicator */}
         <motion.div
-          className="absolute left-1/2 -translate-x-1/2 bottom-[-100px]"
+          className="absolute left-1/2 -translate-x-1/2 bottom-8"
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
         >
