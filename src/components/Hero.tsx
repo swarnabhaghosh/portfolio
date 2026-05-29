@@ -17,8 +17,9 @@ const Hero = () => {
   const roles = [
     'AI/ML Engineer',
     'Deep Learning Enthusiast',
+    'GenAI & LLM Developer',
     'Computer Vision Developer',
-    'Intelligent Systems Builder',
+    'AI Research Enthusiast',
   ];
 
   useEffect(() => {
