@@ -53,7 +53,7 @@ const Education = () => {
                 delay: index * 0.2,
               }}
             >
-              <div className="glass rounded-xl p-8 border border-white/10 hover:border-cyan-400/30 hover:scale-[1.02] transition-all duration-300">
+              <div className="glass rounded-xl p-8 border border-white/10 hover:border-cyan-400/30 transition-all duration-300">
                 {/* Top Section */}
                 <div className="flex items-start gap-4 mb-6">
                   {/* Icon */}
@@ -74,11 +74,10 @@ const Education = () => {
                       {edu.institution}
                     </p>
 
-                    <div className="flex flex-wrap items-center gap-4 text-gray-400 text-sm mb-4">
+                    <div className="flex flex-wrap items-center gap-6 text-gray-400 text-sm mb-4">
                       <div className="flex items-center gap-2">
                         <Award size={16} />
-
-                        <span className="text-cyan-300 font-medium">
+                        <span className="text-cyan-300 font-bold text-lg">
                           CGPA: {edu.cgpa}
                         </span>
                       </div>
@@ -91,21 +90,9 @@ const Education = () => {
                 </div>
 
                 {/* Description */}
-                <p className="text-gray-300 leading-relaxed text-sm md:text-base mb-6">
+                <p className="text-gray-300 leading-relaxed text-sm md:text-base">
                   {edu.description}
                 </p>
-
-                {/* Highlights */}
-                <div className="flex flex-wrap gap-3">
-                  {edu.highlights.map((item, idx) => (
-                    <span
-                      key={idx}
-                      className="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-gray-300 hover:border-cyan-400/40 hover:text-cyan-300 transition-all duration-300"
-                    >
-                      {item}
-                    </span>
-                  ))}
-                </div>
               </div>
             </motion.div>
           ))}

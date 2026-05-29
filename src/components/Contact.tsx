@@ -98,8 +98,8 @@ const Contact = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{
-                    y: -4,
-                    scale: 1.1,
+                    y: -2,
+                    scale: 1.05,
                   }}
                   transition={{ duration: 0.2 }}
                   className="p-3 rounded-xl bg-white/5 border border-white/10 text-gray-300 hover:text-cyan-300 hover:border-cyan-400/40 hover:bg-white/10 transition-all duration-300"

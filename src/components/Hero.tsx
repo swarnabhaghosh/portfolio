@@ -146,30 +146,6 @@ const Hero = () => {
           </p>
         </motion.div>
 
-        {/* Tech Tags */}
-        <motion.div
-          className="flex flex-wrap justify-center gap-3 mb-12"
-          variants={itemVariants}
-        >
-          {[
-            'Machine Learning',
-            'Deep Learning',
-            'Computer Vision',
-            'NLP',
-            'TensorFlow',
-            'FastAPI',
-            'YOLO',
-            'Optimization',
-          ].map((tech) => (
-            <span
-              key={tech}
-              className="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-gray-300 hover:border-cyan-400/40 hover:text-cyan-300 transition-all duration-300 backdrop-blur-xl"
-            >
-              {tech}
-            </span>
-          ))}
-        </motion.div>
-
         {/* Buttons */}
         <motion.div
           className="flex flex-wrap justify-center gap-4"
@@ -185,7 +161,7 @@ const Hero = () => {
     : '_self'
 }
               rel="noopener noreferrer"
-              className={`${button.color} text-white px-6 py-3 rounded-xl flex items-center gap-2 transition-all duration-300 hover:scale-105 hover:shadow-xl text-sm font-medium backdrop-blur-xl`}
+              className={`${button.color} text-white px-6 py-3 rounded-xl flex items-center gap-2 transition-all duration-300 hover:scale-102 hover:shadow-xl text-sm font-medium backdrop-blur-xl`}
             >
               <button.icon size={18} />
               <span>{button.label}</span>

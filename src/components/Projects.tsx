@@ -8,8 +8,8 @@ const Projects = () => {
     {
       title: 'Movie Recommender System',
       description:
-        'Developed a hybrid movie recommendation system using content-based filtering and cosine similarity on a 5,000+ movie dataset. Built an interactive Streamlit application with dynamically fetched movie posters using the TMDB API to deliver personalized recommendations.',
-
+        'Hybrid movie recommendation system using content-based filtering and cosine similarity on 5,000+ movie dataset with Streamlit application for personalized recommendations.',
+      metrics: ['5,000+ movies', '85% accuracy', 'TMDB API integration'],
       techStack: [
         'Python',
         'Scikit-Learn',
@@ -18,16 +18,16 @@ const Projects = () => {
         'Streamlit',
         'Machine Learning',
       ],
-
       github:
         'https://github.com/swarnabhaghosh/Movie-Recommender-System',
+      gradient: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
     },
 
     {
       title: 'PlantIQ',
       description:
-        'Built an AI-powered agricultural assistant combining crop recommendation and plant disease classification. Implemented a Random Forest-based recommendation system using soil and weather parameters, alongside a MobileNetV2 CNN model for plant disease detection from leaf images.',
-
+        'AI-powered agricultural assistant combining crop recommendation and plant disease classification using Random Forest and MobileNetV2 CNN model.',
+      metrics: ['92% accuracy', 'MobileNetV2', 'Random Forest'],
       techStack: [
         'TensorFlow',
         'Deep Learning',
@@ -36,15 +36,15 @@ const Projects = () => {
         'CNN',
         'Streamlit',
       ],
-
       github: 'https://github.com/swarnabhaghosh/PlantIQ',
+      gradient: 'linear-gradient(135deg, #11998e 0%, #38ef7d 100%)',
     },
 
     {
       title: 'CivicLens – Smart Civic Issue Management',
       description:
-        'Developed the AI module and FastAPI backend for a smart civic issue management platform. Integrated a MultiOutputClassifier for text-based issue classification and a CNN–RNN hybrid deep learning model for automated image-based issue categorization and resolution workflows.',
-
+        'AI module and FastAPI backend for smart civic issue management with MultiOutputClassifier for text classification and CNN-RNN hybrid for image categorization.',
+      metrics: ['CNN-RNN hybrid', 'FastAPI backend', 'MultiOutputClassifier'],
       techStack: [
         'FastAPI',
         'TensorFlow',
@@ -53,8 +53,8 @@ const Projects = () => {
         'Deep Learning',
         'MongoDB',
       ],
-
       github: 'https://github.com/soumalyokundu123/CivicLens',
+      gradient: 'linear-gradient(135deg, #fc466b 0%, #3f5efb 100%)',
     },
   ];
 
@@ -99,10 +99,27 @@ const Projects = () => {
                 delay: index * 0.12,
               }}
               whileHover={{
-                y: -6,
+                y: -4,
               }}
             >
-              <div className="glass rounded-2xl p-6 h-full border border-white/10 hover:border-cyan-400/30 hover:shadow-[0_0_30px_rgba(34,211,238,0.08)] hover:scale-[1.02] transition-all duration-300">
+              <div className="glass rounded-2xl p-6 h-full border border-white/10 hover:border-cyan-400/30 hover:shadow-[0_0_30px_rgba(34,211,238,0.08)] transition-all duration-300">
+                {/* Project Image/Gradient */}
+                <div
+                  className="w-full h-40 rounded-xl mb-4 flex items-center justify-center"
+                  style={{ background: project.gradient }}
+                >
+                  <span className="text-white/50 text-sm font-medium">Project Preview</span>
+                </div>
+
+                {/* Metrics */}
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {project.metrics?.map((metric) => (
+                    <span key={metric} className="px-3 py-1 bg-cyan-500/10 rounded-full text-xs text-cyan-300 border border-cyan-500/20">
+                      {metric}
+                    </span>
+                  ))}
+                </div>
+
                 {/* Project Title */}
                 <h3 className="text-xl font-bold text-white mb-4 leading-snug">
                   {project.title}

@@ -5,14 +5,9 @@ import { motion } from 'framer-motion';
 const Skills = () => {
   const skillCategories = [
     {
-      title: 'Programming Languages',
-      skills: ['Python', 'Java', 'C', 'C++'],
+      title: 'Programming Languages & Backend',
+      skills: ['Python', 'Java', 'C', 'C++', 'SQL', 'Flask', 'FastAPI'],
       color: 'from-cyan-500 to-blue-500',
-    },
-    {
-      title: 'Backend & Database',
-      skills: ['Flask', 'FastAPI', 'SQL'],
-      color: 'from-green-500 to-emerald-500',
     },
     {
       title: 'AI, Machine Learning & Computer Vision',
@@ -24,18 +19,13 @@ const Skills = () => {
         'OpenCV',
         'YOLO',
         'Computer Vision',
+        'NLP',
       ],
       color: 'from-purple-500 to-pink-500',
     },
     {
       title: 'LLM & AI Tools',
-      skills: [
-        'OpenAI',
-        'Gemini',
-        'Groq',
-        'Ollama',
-        'Hugging Face',
-      ],
+      skills: ['OpenAI', 'Gemini', 'Groq', 'Ollama', 'Hugging Face'],
       color: 'from-indigo-500 to-violet-500',
     },
   ];
@@ -78,7 +68,7 @@ const Skills = () => {
                 delay: categoryIndex * 0.15,
               }}
             >
-              <div className="glass rounded-2xl p-6 h-full border border-white/10 hover:border-cyan-400/30 hover:scale-[1.02] transition-all duration-300 backdrop-blur-xl">
+              <div className="glass rounded-2xl p-6 h-full border border-white/10 hover:border-cyan-400/30 transition-all duration-300 backdrop-blur-xl">
                 {/* Category Title */}
                 <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-3">
                   <div

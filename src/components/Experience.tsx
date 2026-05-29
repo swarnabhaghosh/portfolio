@@ -27,7 +27,7 @@ const Experience = () => {
   ];
 
   return (
-    <section id="experience" className="py-24 relative">
+    <section id="experience" className="py-24 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -50,7 +50,7 @@ const Experience = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
             >
-              <div className="glass rounded-xl p-8 hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(34,211,238,0.08)] transition-all duration-300">
+              <div className="glass rounded-xl p-8 hover:shadow-[0_0_30px_rgba(34,211,238,0.08)] transition-all duration-300">
                 <div className="flex items-start gap-4 mb-6">
                   <div className="p-3 bg-purple-500/20 rounded-lg">
                     <Briefcase className="text-purple-400" size={24} />
@@ -88,31 +88,15 @@ const Experience = () => {
                       {exp.achievements.map((achievement, index) => (
                         <li
                           key={index}
-                          className="text-gray-400 text-sm leading-relaxed flex items-start gap-2"
+                          className="text-gray-300 text-sm leading-relaxed flex items-start gap-3"
                         >
-                          <span className="text-cyan-400 mt-1">•</span>
+                          <div className="w-1.5 h-1.5 rounded-full bg-cyan-400 mt-2 flex-shrink-0" />
                           <span>{achievement}</span>
                         </li>
                       ))}
                     </ul>
                   </div>
                 )}
-
-                <div>
-                  <h4 className="text-lg font-semibold text-white mb-3">
-                    Research Areas:
-                  </h4>
-                  <div className="flex flex-wrap gap-3">
-                    {exp.focus.map((item) => (
-                      <span
-                        key={item}
-                        className="px-4 py-2 bg-gradient-to-r from-purple-500/20 to-cyan-500/20 rounded-lg text-sm font-medium text-gray-200 border border-purple-500/30"
-                      >
-                        {item}
-                      </span>
-                    ))}
-                  </div>
-                </div>
               </div>
             </motion.div>
           ))}

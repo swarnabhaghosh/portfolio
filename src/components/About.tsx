@@ -85,7 +85,7 @@ const About = () => {
           {stats.map((stat, index) => (
             <motion.div
               key={index}
-              whileHover={{ scale: 1.03 }}
+              whileHover={{ scale: 1.01 }}
               className="glass rounded-2xl p-6 border border-white/10 hover:border-cyan-400/30 transition-all duration-300 backdrop-blur-xl"
             >
               <div className="flex items-center gap-4">
@@ -160,8 +160,8 @@ const About = () => {
               <motion.div
                 key={index}
                 whileHover={{
-                  scale: 1.03,
-                  y: -4,
+                  scale: 1.01,
+                  y: -2,
                 }}
                 className="glass rounded-2xl p-6 border border-white/10 hover:border-cyan-400/30 transition-all duration-300 backdrop-blur-xl"
               >
