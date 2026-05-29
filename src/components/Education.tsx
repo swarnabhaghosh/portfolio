@@ -22,7 +22,7 @@ const Education = () => {
   const stats = [
     {
       label: 'Current Semester',
-      value: '6th Semester',
+      value: '7th Semester',
       icon: BookOpen,
     },
     {
