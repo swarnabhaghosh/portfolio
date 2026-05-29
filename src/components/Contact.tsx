@@ -53,7 +53,7 @@ const Contact = () => {
           className="mb-16"
         >
           <h2 className="text-5xl md:text-6xl font-bold mb-4">
-            <span className="text-white">Let's </span>
+            <span className="text-white">Let&apos;s </span>
             <span className="gradient-text">Connect</span>
           </h2>
 
@@ -74,13 +74,13 @@ const Contact = () => {
             className="glass rounded-3xl p-8"
           >
             <h3 className="text-3xl font-bold text-white mb-6">
-              Let's Build Something
+              Let&apos;s Build Something
             </h3>
 
             <p className="text-gray-400 leading-relaxed mb-10">
               Whether it's an AI application, machine learning
               project, research collaboration, or an intelligent
-              system, I'm always open to discussing new ideas
+              system, I&apos;m always open to discussing new ideas
               and opportunities.
             </p>
 
@@ -156,7 +156,7 @@ const Contact = () => {
 
               <input
                 type="text"
-                placeholder="What's this about?"
+                placeholder="What&apos;s this about?"
                 className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 outline-none focus:border-cyan-400"
               />
 
