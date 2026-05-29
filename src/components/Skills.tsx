@@ -5,9 +5,14 @@ import { motion } from 'framer-motion';
 const Skills = () => {
   const skillCategories = [
     {
-      title: 'Programming Languages & Backend',
-      skills: ['Python', 'Java', 'C', 'C++', 'SQL', 'Flask', 'FastAPI'],
+      title: 'Programming Languages',
+      skills: ['Python', 'Java', 'C', 'C++'],
       color: 'from-cyan-500 to-blue-500',
+    },
+    {
+      title: 'Backend & Database',
+      skills: ['SQL', 'Flask', 'FastAPI'],
+      color: 'from-green-500 to-emerald-500',
     },
     {
       title: 'AI, Machine Learning & Computer Vision',
