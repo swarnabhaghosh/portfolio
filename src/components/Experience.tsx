@@ -10,12 +10,12 @@ const Experience = () => {
       company: 'IEEE Computer Society Student Branch, IIT Kharagpur',
       period: 'July, 2025 - November, 2025',
       location: 'Kharagpur, India',
-      description: 'Research internship focused on Integer Linear Programming, optimization algorithms, and scheduling systems for smart infrastructure applications.',
+      description:
+  'Research internship focused on Integer Linear Programming, optimization algorithms, scheduling systems, and mathematical modeling for real-world infrastructure optimization problems.',
       achievements: [
-        'Developed Integer Linear Programming models for aircraft parking allocation optimization',
-        'Implemented scheduling algorithms improving operational efficiency by 25%',
-        'Built revenue optimization framework for smart infrastructure systems',
-        'Applied advanced mathematical modeling techniques to real-world infrastructure challenges',
+        'Formulated an Integer Linear Programming (ILP) model to solve the dynamic aircraft parking allocation problem by incorporating real-time revenue potential and operational constraints.',
+        'Developed an automated scheduling system leveraging the ILP model to optimize aircraft parking bay assignments and maximize revenue generation.',
+        'Enhanced airport profitability and ground control efficiency by reducing assignment conflicts and improving utilization of high-value parking assets through a data-driven scheduling approach.',
       ],
       focus: [
         'Integer Linear Programming',
@@ -54,7 +54,7 @@ const Experience = () => {
                 {/* IIT Badge */}
                 <div className="inline-block mb-4">
                   <span className="px-3 py-1 bg-gradient-to-r from-purple-500/20 to-cyan-500/20 rounded-full text-xs font-semibold text-cyan-300 border border-purple-500/30">
-                    🎓 IIT Kharagpur
+                    Research Internship • IIT Kharagpur
                   </span>
                 </div>
 
@@ -89,7 +89,7 @@ const Experience = () => {
                 {exp.achievements && (
                   <div>
                     <h4 className="text-lg font-semibold text-white mb-4">
-                      Key Achievements:
+                      Work Done:
                     </h4>
                     <ul className="space-y-3">
                       {exp.achievements.map((achievement, index) => (
