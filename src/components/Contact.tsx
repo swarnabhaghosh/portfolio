@@ -37,6 +37,11 @@ const Contact = () => {
     href: 'https://leetcode.com/u/swarnabhaghosh/',
     label: 'LeetCode',
   },
+  {
+    icon: Instagram,
+    href: 'https://instagram.com/swarnabha09',
+    label: 'Instagram',
+  },
 ];
 
   return (
@@ -49,66 +54,61 @@ const Contact = () => {
 
       <div className="absolute bottom-10 right-10 w-72 h-72 bg-purple-500/10 blur-3xl rounded-full" />
 
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="grid md:grid-cols-2 gap-16 items-start"
         >
-          {/* Left Side */}
-          <div>
-            <h2 className="text-4xl md:text-5xl font-bold gradient-text mb-8">
-              Contact Me
-            </h2>
+          <h2 className="text-4xl md:text-5xl font-bold gradient-text mb-4">
+            Get In Touch
+          </h2>
 
-            {/* Email */}
-            <a
-              href="mailto:swarnabha983@gmail.com"
-              className="flex items-center gap-3 text-gray-300 hover:text-cyan-300 transition-colors duration-300 mb-8 text-lg"
-            >
-              <Mail size={22} />
-              <span>swarnabha983@gmail.com</span>
-            </a>
+          <p className="text-gray-400 text-lg mb-12">
+            Feel free to reach out for collaborations, opportunities, or just a friendly conversation.
+          </p>
 
-            {/* Resume Button */}
-            <a
-              href="/resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 px-6 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-medium hover:scale-105 hover:shadow-[0_0_25px_rgba(34,211,238,0.25)] transition-all duration-300"
-            >
-              <Download size={18} />
-              Resume
-            </a>
+          {/* Email */}
+          <a
+            href="mailto:swarnabha983@gmail.com"
+            className="inline-flex items-center gap-3 text-gray-300 hover:text-cyan-300 transition-colors duration-300 mb-12 text-lg"
+          >
+            <Mail size={22} />
+            <span>swarnabha983@gmail.com</span>
+          </a>
+
+          {/* Social Links */}
+          <div className="flex justify-center gap-6 mb-12">
+            {socials.map((social, index) => (
+              <motion.a
+                key={index}
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{
+                  y: -2,
+                  scale: 1.05,
+                }}
+                transition={{ duration: 0.2 }}
+                className="p-3 rounded-xl bg-white/5 border border-white/10 text-gray-300 hover:text-cyan-300 hover:border-cyan-400/40 hover:bg-white/10 transition-all duration-300"
+                title={social.label}
+              >
+                <social.icon size={28} />
+              </motion.a>
+            ))}
           </div>
 
-          {/* Right Side */}
-          <div className="md:text-right">
-            <h3 className="text-3xl font-bold text-white mb-8">
-              Follow Me
-            </h3>
-
-            <div className="flex md:justify-end gap-6">
-              {socials.map((social, index) => (
-                <motion.a
-                  key={index}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{
-                    y: -2,
-                    scale: 1.05,
-                  }}
-                  transition={{ duration: 0.2 }}
-                  className="p-3 rounded-xl bg-white/5 border border-white/10 text-gray-300 hover:text-cyan-300 hover:border-cyan-400/40 hover:bg-white/10 transition-all duration-300"
-                >
-                  <social.icon size={28} />
-                </motion.a>
-              ))}
-            </div>
-          </div>
+          {/* Resume Button */}
+          <a
+            href="/resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-medium hover:scale-105 hover:shadow-[0_0_25px_rgba(34,211,238,0.25)] transition-all duration-300"
+          >
+            <Download size={18} />
+            Download Resume
+          </a>
         </motion.div>
 
         {/* Bottom */}

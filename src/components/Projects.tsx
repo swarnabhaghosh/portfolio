@@ -102,59 +102,60 @@ const Projects = () => {
                 y: -4,
               }}
             >
-              <div className="glass rounded-2xl p-6 h-full border border-white/10 hover:border-cyan-400/30 hover:shadow-[0_0_30px_rgba(34,211,238,0.08)] transition-all duration-300">
+              <div className="glass rounded-2xl overflow-hidden border border-white/10 hover:border-cyan-400/30 hover:shadow-[0_0_40px_rgba(34,211,238,0.15)] transition-all duration-300 h-full flex flex-col">
                 {/* Project Image/Gradient */}
                 <div
-                  className="w-full h-40 rounded-xl mb-4 flex items-center justify-center"
+                  className="w-full h-48 flex items-center justify-center relative"
                   style={{ background: project.gradient }}
                 >
-                  <span className="text-white/50 text-sm font-medium">Project Preview</span>
+                  <span className="text-white/60 text-sm font-medium">Project Preview</span>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
                 </div>
 
-                {/* Metrics */}
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.metrics?.map((metric) => (
-                    <span key={metric} className="px-3 py-1 bg-cyan-500/10 rounded-full text-xs text-cyan-300 border border-cyan-500/20">
-                      {metric}
-                    </span>
-                  ))}
+                <div className="p-6 flex-1 flex flex-col">
+                  {/* Metrics */}
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {project.metrics?.map((metric) => (
+                      <span key={metric} className="px-3 py-1 bg-cyan-500/10 rounded-full text-xs text-cyan-300 border border-cyan-500/20">
+                        {metric}
+                      </span>
+                    ))}
+                  </div>
+
+                  {/* Project Title */}
+                  <h3 className="text-xl font-bold text-white mb-3 leading-snug">
+                    {project.title}
+                  </h3>
+
+                  {/* Description */}
+                  <p className="text-gray-400 mb-5 text-sm leading-relaxed flex-1">
+                    {project.description}
+                  </p>
+
+                  {/* Tech Stack */}
+                  <div className="flex flex-wrap gap-2 mb-5">
+                    {project.techStack.map((tech) => (
+                      <span
+                        key={tech}
+                        className="px-3 py-1 bg-white/5 rounded-full text-xs font-medium text-gray-300 border border-white/10 hover:border-cyan-400/40 hover:text-cyan-300 transition-all duration-300"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+
+                  {/* GitHub Link */}
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 transition-colors duration-300 text-sm font-medium"
+                  >
+                    <Github size={16} />
+                    View on GitHub
+                    <ExternalLink size={14} />
+                  </a>
                 </div>
-
-                {/* Project Title */}
-                <h3 className="text-xl font-bold text-white mb-4 leading-snug">
-                  {project.title}
-                </h3>
-
-                {/* Description */}
-                <p className="text-gray-400 mb-6 text-sm leading-relaxed">
-                  {project.description}
-                </p>
-
-                {/* Tech Stack */}
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {project.techStack.map((tech) => (
-                    <span
-                      key={tech}
-                      className="px-3 py-1 bg-white/5 rounded-full text-xs font-medium text-gray-300 border border-white/10 hover:border-cyan-400/40 hover:text-cyan-300 transition-all duration-300"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-
-                {/* GitHub Link */}
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 transition-colors duration-300 text-sm font-medium"
-                >
-                  <Github size={16} />
-
-                  View on GitHub
-
-                  <ExternalLink size={14} />
-                </a>
               </div>
             </motion.div>
           ))}

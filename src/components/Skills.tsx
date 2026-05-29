@@ -68,9 +68,9 @@ const Skills = () => {
                 delay: categoryIndex * 0.15,
               }}
             >
-              <div className="glass rounded-2xl p-6 h-full border border-white/10 hover:border-cyan-400/30 transition-all duration-300 backdrop-blur-xl">
+              <div className="glass rounded-2xl p-7 h-full border border-white/10 hover:border-cyan-400/30 transition-all duration-300 backdrop-blur-xl">
                 {/* Category Title */}
-                <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-3">
+                <h3 className="text-xl font-bold text-white mb-5 flex items-center gap-3">
                   <div
                     className={`w-2 h-8 bg-gradient-to-b ${category.color} rounded-full`}
                   />
@@ -79,7 +79,7 @@ const Skills = () => {
                 </h3>
 
                 {/* Skills */}
-                <div className="flex flex-wrap gap-3">
+                <div className="flex flex-wrap gap-2.5">
                   {category.skills.map((skill, skillIndex) => (
                     <motion.span
                       key={skill}
@@ -88,9 +88,9 @@ const Skills = () => {
                       viewport={{ once: true }}
                       transition={{
                         duration: 0.4,
-                        delay: skillIndex * 0.06,
+                        delay: skillIndex * 0.05,
                       }}
-                      className="px-4 py-2 bg-white/5 rounded-xl text-sm font-medium text-gray-300 border border-white/10 hover:border-cyan-400/40 hover:text-cyan-300 transition-all duration-300"
+                      className="px-3.5 py-1.5 bg-white/5 rounded-lg text-sm font-medium text-gray-300 border border-white/10 hover:border-cyan-400/40 hover:text-cyan-300 transition-all duration-300"
                     >
                       {skill}
                     </motion.span>

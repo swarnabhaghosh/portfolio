@@ -50,16 +50,23 @@ const Experience = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
             >
-              <div className="glass rounded-xl p-8 hover:shadow-[0_0_30px_rgba(34,211,238,0.08)] transition-all duration-300">
+              <div className="glass rounded-2xl p-8 border border-white/10 hover:border-cyan-400/30 hover:shadow-[0_0_30px_rgba(34,211,238,0.08)] transition-all duration-300">
+                {/* IIT Badge */}
+                <div className="inline-block mb-4">
+                  <span className="px-3 py-1 bg-gradient-to-r from-purple-500/20 to-cyan-500/20 rounded-full text-xs font-semibold text-cyan-300 border border-purple-500/30">
+                    🎓 IIT Kharagpur
+                  </span>
+                </div>
+
                 <div className="flex items-start gap-4 mb-6">
                   <div className="p-3 bg-purple-500/20 rounded-lg">
                     <Briefcase className="text-purple-400" size={24} />
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-xl font-bold text-white mb-2">
+                    <h3 className="text-xl md:text-2xl font-bold text-white mb-2">
                       {exp.title}
                     </h3>
-                    <p className="text-cyan-400 font-semibold mb-2">
+                    <p className="text-cyan-400 font-semibold mb-3 text-lg">
                       {exp.company}
                     </p>
                     <div className="flex flex-wrap gap-4 text-gray-400 text-sm">
@@ -75,16 +82,16 @@ const Experience = () => {
                   </div>
                 </div>
 
-                <p className="text-gray-300 mb-6 leading-relaxed text-sm">
+                <p className="text-gray-300 mb-6 leading-relaxed text-sm md:text-base">
                   {exp.description}
                 </p>
 
                 {exp.achievements && (
-                  <div className="mb-6">
-                    <h4 className="text-lg font-semibold text-white mb-3">
+                  <div>
+                    <h4 className="text-lg font-semibold text-white mb-4">
                       Key Achievements:
                     </h4>
-                    <ul className="space-y-2">
+                    <ul className="space-y-3">
                       {exp.achievements.map((achievement, index) => (
                         <li
                           key={index}

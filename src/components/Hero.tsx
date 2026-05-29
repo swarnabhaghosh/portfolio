@@ -1,15 +1,32 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { useState, useEffect } from 'react';
 import {
   Github,
   Linkedin,
   Mail,
   Download,
-  Sparkles,
+  MapPin,
+  Phone,
+  ArrowRight,
 } from 'lucide-react';
 
 const Hero = () => {
+  const [currentRole, setCurrentRole] = useState(0);
+  const roles = [
+    'AI/ML Engineer',
+    'Deep Learning Enthusiast',
+    'Computer Vision Developer',
+    'Intelligent Systems Builder',
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentRole((prev) => (prev + 1) % roles.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -34,11 +51,18 @@ const Hero = () => {
 
   const buttons = [
     {
+      icon: ArrowRight,
+      label: 'View Projects',
+      href: '#projects',
+      color:
+        'bg-gradient-to-r from-cyan-500 to-blue-500 hover:shadow-cyan-500/30',
+    },
+    {
       icon: Download,
       label: 'Resume',
       href: '/resume.pdf',
       color:
-        'bg-gradient-to-r from-cyan-500 to-blue-500 hover:shadow-cyan-500/30',
+        'bg-white/10 border border-white/10 hover:border-cyan-400/40 hover:bg-white/15',
     },
     {
       icon: Github,
@@ -51,13 +75,6 @@ const Hero = () => {
       icon: Linkedin,
       label: 'LinkedIn',
       href: 'https://www.linkedin.com/in/swarnabhaghosh/',
-      color:
-        'bg-white/10 border border-white/10 hover:border-cyan-400/40 hover:bg-white/15',
-    },
-    {
-      icon: Mail,
-      label: 'Contact',
-      href: '#contact',
       color:
         'bg-white/10 border border-white/10 hover:border-cyan-400/40 hover:bg-white/15',
     },
@@ -90,7 +107,7 @@ const Hero = () => {
       >
         {/* Name */}
         <motion.h1
-          className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 tracking-tight"
+          className="text-5xl md:text-7xl lg:text-8xl font-bold mb-4 tracking-tight"
           variants={itemVariants}
         >
           <span className="bg-gradient-to-r from-white via-cyan-200 to-cyan-400 bg-clip-text text-transparent">
@@ -104,46 +121,50 @@ const Hero = () => {
           </span>
         </motion.h1>
 
-        {/* Title */}
-        <motion.h2
-          className="text-lg md:text-2xl lg:text-3xl font-medium text-gray-300 mb-6 tracking-wide"
+        {/* Animated Roles */}
+        <motion.div
+          className="h-8 mb-6"
           variants={itemVariants}
         >
-          Artificial Intelligence & Machine Learning Engineer
-        </motion.h2>
+          <motion.h2
+            key={currentRole}
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: 20 }}
+            transition={{ duration: 0.5 }}
+            className="text-xl md:text-3xl lg:text-4xl font-medium text-cyan-300"
+          >
+            {roles[currentRole]}
+          </motion.h2>
+        </motion.div>
 
         {/* Tagline */}
         <motion.p
-          className="text-base md:text-xl text-cyan-300 max-w-3xl mx-auto mb-10 font-medium"
+          className="text-base md:text-lg text-gray-300 max-w-3xl mx-auto mb-8 leading-relaxed"
           variants={itemVariants}
         >
-          Building intelligent systems that solve real-world problems.
+          Building practical AI systems using Machine Learning, Deep Learning, Computer Vision, and intelligent automation.
         </motion.p>
 
-        {/* Intro Section */}
+        {/* Contact Info */}
         <motion.div
-          className="space-y-4 mb-12"
+          className="flex flex-wrap justify-center gap-4 md:gap-8 mb-10 text-sm md:text-base text-gray-400"
           variants={itemVariants}
         >
-          <p className="text-base md:text-lg text-gray-300">
-            B.Tech Computer Science and Engineering student at{' '}
-            <span className="text-cyan-400 font-medium">
-              MCKV Institute of Engineering
-            </span>
-          </p>
-
-          <p className="text-base md:text-lg text-gray-400">
-            Focused on{' '}
-            <span className="text-cyan-300">
-              Artificial Intelligence & Machine Learning
-            </span>
-            , intelligent automation, and scalable AI systems.
-          </p>
-
-          <p className="text-sm md:text-base text-gray-500 max-w-2xl mx-auto leading-relaxed">
-            Interested in building practical AI solutions through Machine
-            Learning, Deep Learning, Computer Vision, and NLP.
-          </p>
+          <div className="flex items-center gap-2">
+            <MapPin size={16} className="text-cyan-400" />
+            <span>Howrah, West Bengal, India</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <Mail size={16} className="text-cyan-400" />
+            <a href="mailto:swarnabha983@gmail.com" className="hover:text-cyan-300 transition-colors">
+              swarnabha983@gmail.com
+            </a>
+          </div>
+          <div className="flex items-center gap-2">
+            <Phone size={16} className="text-cyan-400" />
+            <span>+91 9836951351</span>
+          </div>
         </motion.div>
 
         {/* Buttons */}

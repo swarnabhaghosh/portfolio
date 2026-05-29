@@ -68,7 +68,7 @@ const About = () => {
             About Me
           </h2>
 
-          <p className="text-center text-gray-400 max-w-2xl mx-auto text-lg mb-16">
+          <p className="text-center text-gray-400 max-w-2xl mx-auto text-lg mb-20">
             Passionate about building intelligent AI systems that combine
             research, engineering, and practical real-world impact.
           </p>
@@ -76,7 +76,7 @@ const About = () => {
 
         {/* Stats Section */}
         <motion.div
-          className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-20"
+          className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-24"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -105,7 +105,7 @@ const About = () => {
         </motion.div>
 
         {/* Main Content */}
-        <div className="grid md:grid-cols-2 gap-14 lg:gap-24 items-center">
+        <div className="grid md:grid-cols-2 gap-16 lg:gap-28 items-center">
           {/* Left Content */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
