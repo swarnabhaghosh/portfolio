@@ -17,8 +17,10 @@ const Skills = () => {
     {
       title: 'AI, Machine Learning & Computer Vision',
       skills: [
-        'TensorFlow',
         'Scikit-Learn',
+        'TensorFlow',
+        'CNNs',
+        'Transfer Learning',
         'OpenCV',
         'YOLO',
         'NLTK',
